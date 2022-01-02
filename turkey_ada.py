@@ -9,11 +9,13 @@ Created on Sun Jan  2 12:05:47 2022
 import numpy as np
 import matplotlib.pyplot as plt
 
+## If you have a continuous cost (costA) and you reduce this (costB) and stake the savings in ADA, what is your return over a specified time horizon? 
+
 ## Adjustable parameters:
-costA = 64.90 #monthly in USD
+costA = 64.90 #monthly in USD (the more expensive option must be costA)
 costB = 33.33 #monthly in USD
 time_horizon = 20 # in years
-final_ADA_prices = [1.5,5,10] # in USD
+final_ADA_prices = [1.5,5,10] # in USD. add as many as you want, separated by a comma
 starting_ADA_price = 1.36 #in USD
 inflation = .03 #annual percentage as a proportion in USD, i.e., 3% = .03
 staking_return = .05 #annual percentage as a proportion in ADA, i.e., 5% = .05
@@ -68,6 +70,7 @@ import matplotlib as mpl
 mpl.rcParams['axes.spines.right'] = False
 mpl.rcParams['axes.spines.top'] = False
 plt.show()
+plt.savefig('turkey_ada.png')
         
         
         
