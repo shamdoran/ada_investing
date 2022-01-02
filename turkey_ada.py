@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jan  2 12:05:47 2022
-
 @author: shamdoran
 """
 
@@ -15,7 +14,7 @@ import matplotlib.pyplot as plt
 costA = 64.90 #monthly in USD (the more expensive option must be costA)
 costB = 33.33 #monthly in USD
 time_horizon = 20 # in years
-final_ADA_prices = [1.5,5,10] # in USD. add as many as you want, separated by a comma
+final_ADA_prices = [1.5,5,10,20] # in USD. add as many as you want, separated by a comma
 starting_ADA_price = 1.36 #in USD
 inflation = .03 #annual percentage as a proportion in USD, i.e., 3% = .03
 staking_return = .05 #annual percentage as a proportion in ADA, i.e., 5% = .05
@@ -62,18 +61,13 @@ for fa in final_ADA_prices:
         
     plt.plot(np.arange(0,time_horizon_in_days),investment_over_time)
     plt.text(time_horizon_in_days,investment_over_time[-1]+2000,'If ADA hits $'+str(fa))
-    plt.text(time_horizon_in_days,investment_over_time[-1]-2000,'$'+str(np.round(investment_over_time[-1])))
+    plt.text(time_horizon_in_days,investment_over_time[-1]-2000,'$'+str(np.round(investment_over_time[-1]).astype(int)))
     plt.xlabel('days since you start roasting your own turkey')
     plt.ylabel('investment yield (in USD)')
 
 import matplotlib as mpl
 mpl.rcParams['axes.spines.right'] = False
 mpl.rcParams['axes.spines.top'] = False
-plt.show()
+plt.tight_layout()
 plt.savefig('turkey_ada.png')
-        
-        
-        
-        
-        
-        
+plt.show()
